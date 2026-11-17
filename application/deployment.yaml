@@ -1,19 +1,21 @@
 apiVersion: apps/v1
-kind: Deployment
-metadata:
-name: example-application
-spec:
-replicas: 1
-selector:
-matchLabels:
 app: example-application
-template:
-metadata:
-labels:
-app: example-application
-spec:
 containers:
 - name: example-application
 image: <image-name>:<tag>
+kind: Deployment
+labels: null
+matchLabels: null
+metadata: null
+name: example-application
 ports:
 - containerPort: 8080
+replicas: 1
+selector: null
+spec:
+  template:
+    spec:
+      containers:
+      - image: okostanths/app-repo:v1.0.4
+        name: app-repo
+template: null
