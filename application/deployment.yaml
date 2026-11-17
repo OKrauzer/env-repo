@@ -1,25 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-repo
   labels:
     app: app-repo
-
+  name: app-repo
 spec:
   replicas: 1
-
   selector:
     matchLabels:
       app: app-repo
-
   template:
     metadata:
       labels:
         app: app-repo
-
     spec:
       containers:
-        - name: app-repo
-          image: okostanths/app-repo:v1.0.4
-          ports:
-            - containerPort: 8080
+      - image: okostanths/app-repo:v1.0.4
+        name: app-repo
+        ports:
+        - containerPort: 8080
