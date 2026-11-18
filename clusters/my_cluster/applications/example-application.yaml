@@ -5,6 +5,7 @@ metadata:
   namespace: default
 spec:
   interval: 5m0s
+  targetNamespace: default
   path: ./application
   prune: true
   sourceRef:
